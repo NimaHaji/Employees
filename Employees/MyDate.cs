@@ -29,15 +29,24 @@ namespace Employees
         {
             day = 24; month = 2; year = 1403;
         }
-        /*public MyDate(int day, int m, int y){
-         this.day=day;  month= m;   year= y;
-        }*/
+       
         public MyDate(int day, int m, int y)
         {
             Day = day; Month = m; Year = y;
         }
-        /*public SetDate(int day, int nonth, int year){
-       }*/
+        public static void AddDate(Person person, int d,int m,int y)
+        {
+            person.birthDate.day += d;
+            person.birthDate.month += m;
+            person.birthDate.year += y;
+        }
+        public void AddDate(int d, int m, int y)
+        {
+            day += d;
+            month += m;
+            year += y;
+        }
+
         public string ToString()
         {
             return String.Format("{0}/{1:D2}/{2:D2}", year, month, day);

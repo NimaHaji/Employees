@@ -1,1 +1,6 @@
 F:\learning\C#\Employees\Employees\Employees\bin\Debug\Employees.exe.config
+F:\learning\C#\Employees\Employees\Employees\obj\Debug\Employees.csprojResolveAssemblyReference.cache
+F:\learning\C#\Employees\Employees\Employees\obj\Debug\Employees.exe
+F:\learning\C#\Employees\Employees\Employees\obj\Debug\Employees.pdb
+F:\learning\C#\Employees\Employees\Employees\bin\Debug\Employees.exe
+F:\learning\C#\Employees\Employees\Employees\bin\Debug\Employees.pdb

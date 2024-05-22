@@ -8,8 +8,8 @@ namespace Employees
 {
     public class Person
     {
-        string fName, lName;
-        MyDate birthDate;
+        public string fName, lName;
+        public MyDate birthDate;
         public string fullName
         {
             get { return fName + " " + lName; }
@@ -24,6 +24,7 @@ namespace Employees
             fName = fname; lName = lname;
             birthDate = new MyDate(day, m, y);
         }
+        
         public void Print()
         {
             Console.WriteLine("Person Information:\n First name:{0}, Last Name:{1}", fName, lName);
