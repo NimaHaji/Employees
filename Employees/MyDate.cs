@@ -10,7 +10,7 @@ namespace Employees
     public class MyDate
     {
         private int day, month, year;
-        PersianCalendar calender = new PersianCalendar();
+        public PersianCalendar calender = new PersianCalendar();
         public int Day
         {
             get { return day; }
@@ -42,12 +42,26 @@ namespace Employees
             month += m;
             year += y;
         }
-        public int Age()
+        public void Age()
         {
-            int now= calender.GetYear(DateTime.Now);
-            int Age;
-            Age = now - year;
-            return Age;
+            int YearNow = calender.GetYear(DateTime.Now);
+            year = YearNow - year;
+            int monthNow = calender.GetMonth(DateTime.Now);
+            month = monthNow - Month;
+            int daynow = calender.GetDayOfMonth(DateTime.Now);
+            day = daynow - day;
+            if (day < 0)
+            {
+                month--;
+                day += calender.GetDaysInMonth(YearNow, monthNow);
+            }
+
+            if (month < 0)
+            {
+                year--;
+                month += 12;
+            }
+            Console.WriteLine($"Age is {year} years,{month} months,{day} days");
         }
         public string ToString()
         {

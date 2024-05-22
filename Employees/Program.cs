@@ -8,17 +8,18 @@ namespace Employee
         public static void Main(string[] args)
         {
 
-           
-            Person p1 = new Person();
-            p1.fName = "sahar";
-            p1.lName = "golbabaii";
-            p1.Print();
-            p1.birthDate.AddDate(2, 2, 2);
-            p1.Print();
-            Person p2 = new Person("nima", "haji", 25, 1, 1384);
-            p2.Print();
-            p2.birthDate.AddDate(2, 2, 2);
-            p2.Print();
+
+            Person hesam = new Person("hesam", "ebrahimi", 3, 11, 1383);
+            Person nima = new Person("nima", "haji", 25, 1, 1384);
+            Person ali = new Person("ali", "alipor", 30, 2, 1382);
+            Person mohsen = new Person("mohsen", "miri", 20, 11, 1383);
+            Person[] persons = { hesam, nima, ali, mohsen };
+            persons= Person.SortArray(persons);
+            foreach(var i in persons)
+            {
+                i.Print();
+            }
+            
             Console.ReadKey();
         }
     }
