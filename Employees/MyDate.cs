@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace Employees
 {
     public class MyDate
     {
         private int day, month, year;
+        PersianCalendar calender = new PersianCalendar();
         public int Day
         {
             get { return day; }
@@ -34,19 +36,19 @@ namespace Employees
         {
             Day = day; Month = m; Year = y;
         }
-        public static void AddDate(Person person, int d,int m,int y)
-        {
-            person.birthDate.day += d;
-            person.birthDate.month += m;
-            person.birthDate.year += y;
-        }
         public void AddDate(int d, int m, int y)
         {
             day += d;
             month += m;
             year += y;
         }
-
+        public int Age()
+        {
+            int now= calender.GetYear(DateTime.Now);
+            int Age;
+            Age = now - year;
+            return Age;
+        }
         public string ToString()
         {
             return String.Format("{0}/{1:D2}/{2:D2}", year, month, day);
